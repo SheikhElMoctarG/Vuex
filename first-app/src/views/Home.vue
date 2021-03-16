@@ -1,18 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <h4>VUE JS</h4>
+      <div v-for="item in employees" :key="item.id" >
+          <p v-if="item.department === 'vuejs'"> {{item.name}} </p>
+      </div>
+      <h4>NODE JS</h4>
+      <div v-for="item in employees" :key="item.id">
+          <p v-if="item.department === 'nodejs'"> {{item.name}} </p>
+      </div>
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  computed:{
+      employees(){
+          return this.$store.state.names
+      }
   }
 }
 </script>
