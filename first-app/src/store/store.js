@@ -24,5 +24,12 @@ export const store = new Vuex.Store({
             })
             return person
         }
+    },
+    mutations:{
+        added:state=>{
+            return state.names.forEach(x=>{
+                x.age += 1
+            })
+        }
     }
 })

@@ -2,8 +2,10 @@
   <div class="home">
       <h4>VUE JS</h4>
       <div v-for="item in editorEmployees" :key="item.id" >
-          <p > {{item.name}} </p>
+          <p > {{item.name}} {{item.age}} </p>
       </div>
+          <button v-on:click="addedS">Add</button>
+
       <h4>NODE JS</h4>
       <div v-for="item in employees" :key="item.id">
           <p v-if="item.department === 'nodejs'"> {{item.name}} </p>
@@ -23,6 +25,11 @@ export default {
       },
       editorEmployees(){
           return this.$store.getters.mydata
+      }
+  },
+  methods:{
+      addedS(){
+          return this.$store.commit('added')
       }
   }
 }
