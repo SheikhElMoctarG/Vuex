@@ -12,5 +12,17 @@ export const store = new Vuex.Store({
             {name:"MAlee", age:16, department:"vuejs"},
             {name:"Ahmedou Muhammed Lemine", age:19, department:"nodejs"},
         ]
+    },
+    getters:{
+        mydata:state =>{
+            let person = state.names.map(x =>{
+                return{
+                    name: 'my name is '+x.name,
+                    age: 'age is '+x.age,
+                    department: 'department is '+x.department
+                }
+            })
+            return person
+        }
     }
 })

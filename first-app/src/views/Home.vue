@@ -1,8 +1,8 @@
 <template>
   <div class="home">
       <h4>VUE JS</h4>
-      <div v-for="item in employees" :key="item.id" >
-          <p v-if="item.department === 'vuejs'"> {{item.name}} </p>
+      <div v-for="item in editorEmployees" :key="item.id" >
+          <p > {{item.name}} </p>
       </div>
       <h4>NODE JS</h4>
       <div v-for="item in employees" :key="item.id">
@@ -20,6 +20,9 @@ export default {
   computed:{
       employees(){
           return this.$store.state.names
+      },
+      editorEmployees(){
+          return this.$store.getters.mydata
       }
   }
 }
