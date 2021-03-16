@@ -30,6 +30,18 @@ export const store = new Vuex.Store({
             return state.names.forEach(x=>{
                 x.age += 1
             })
+        },
+        sub:state=>{
+            return state.names.forEach(x=>{
+                x.age -= 1
+            })
+        }
+    },
+    actions:{
+        sub:context=>{
+            setTimeout(function() {
+                context.commit('sub')
+            }, 2000);
         }
     }
 })

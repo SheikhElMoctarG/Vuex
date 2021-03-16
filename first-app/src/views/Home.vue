@@ -4,7 +4,9 @@
       <div v-for="item in editorEmployees" :key="item.id" >
           <p > {{item.name}} {{item.age}} </p>
       </div>
-          <button v-on:click="addedS">Add</button>
+          <button v-on:click="addedS">Add</button> | 
+          <button v-on:click="sub">Sub</button> | 
+
 
       <h4>NODE JS</h4>
       <div v-for="item in employees" :key="item.id">
@@ -30,6 +32,9 @@ export default {
   methods:{
       addedS(){
           return this.$store.commit('added')
+      },
+      sub(){
+          return this.$store.dispatch('sub')
       }
   }
 }
